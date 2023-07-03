@@ -23,23 +23,42 @@ let form = document.querySelector("#submitForm");
 function displaySearch(event) {
   event.preventDefault();
   let input = document.querySelector("#inputValue");
-  console.log(input.value)
+  console.log(input.value);
   let inputValue = input.value;
   let urlSearch = `${apiURL}current?query=${inputValue}&units=metric`;
 
   let urlForecast = `${apiURL}forecast?query=${inputValue}&units=metric`;
-    function getForecast(response) {
-    console.log(response.data.daily);
-    
-    }
 
-    axios.get(`${urlForecast}&key=${apiKey}`).then(getForecast);
-    
+  function getForecast(response) {
+    console.log(response.data.daily);
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+    let forecastHTML = `<div class="row row-cols-4 row-cols-sm-5 py-3">`;
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col py-1">
+            <p class="my-0">${day}</p>
+            <i class="bi bi-cloud-rain fs-4"></i>
+            <p class="my-0">22&deg;C</p>
+            <p class="my-0 text-muted">22&deg;C</p>
+        </div>
+      `;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  }
+
+  axios.get(`${urlForecast}&key=${apiKey}`).then(getForecast);
+
   function showRealTimeData(response) {
     let image = response.data.condition.icon_url;
     document.querySelector("#iconElement").setAttribute("src", `${image}`);
     let temperature = Math.round(response.data.temperature.current);
-    
+
     document.querySelector("#tempOutput").textContent = `${temperature}`;
     let description = response.data.condition.description;
     document.querySelector("#description").textContent = `${description}`;
