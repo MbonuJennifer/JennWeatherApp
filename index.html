@@ -15,9 +15,9 @@
   <body>
     <div class="container-fluid">
       <div class="container">
-        <div class="row">
+        <div class="row py-5">
           <div class="col-md-6 col-sm-12">
-            <h1>JennWeatherApp</h1>
+            <h3>JennWeatherApp</h3>
           </div>
           <div class="col-md-6 col-sm-12">
             <form class="d-flex" role="search">
@@ -27,98 +27,106 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
+              <button class="btn btn-outline" type="submit">Search</button>
             </form>
           </div>
         </div>
         <div class="row">
-          <div class="card">
+          <div class="tempCard px-4 py-1">
             <div class="">
-              <div class="row"></div>
-              <div class="row">
-                <div class="d-flex">
-                  <div>
-                    <h5 class="card-title">14</h5>
-                    <p class="card-text">Lagos, Nigeria</p>
-                  </div>
-                  <div>
-                    <p>9:16</p>
-                    <p>Monday</p>
-                  </div>
-                </div>
-              </div>
+              <h1 class="card-titles mb-0">14</h1>
+              <p class="card-texts mb-0">Lagos, Nigeria</p>
+            </div>
+            <div class="">
+              <p class="mb-0">9:16</p>
+              <p class="mb-0">Monday</p>
             </div>
           </div>
         </div>
-        <div class="row g-4">
-          <div class="col-md-3 col-sm-12">
-            <div class="d-flex">
+        <div class="row g-4 justify-content-between main">
+          <div class="col-md-4 col-sm-12 dataCard">
+            <div class="databox">
               <div class="d-flex align-items-center">
-                <div>
+                <div class="pe-2">
                   <i class="bi bi-cloud-rain fs-4"></i>
-  
                 </div>
                 <div>
-                  <p class="mb-0">Windy</p>
-                  <p>10</p>
-  
+                  <p class="mb-0">Rain</p>
+                  <p class="mb-0">10</p>
                 </div>
               </div>
               <div class="d-flex align-items-center">
-                <div>
+                <div class="pe-2">
                   <i class="bi bi-cloud-rain fs-4"></i>
-  
                 </div>
                 <div>
-                  <p class="mb-0">Windy</p>
-                  <p>10</p>
-  
+                  <p class="mb-0">Wind</p>
+                  <p class="mb-0">10</p>
                 </div>
               </div>
-
             </div>
           </div>
-          <div class="col-md-7 col-sm-12">
+
+          <div class="col-md-7 col-sm-12 bigDataCard">
             <div class="">
-              <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div class="col">
+              <div class="row row-cols-2 row-cols-sm-5 row-cols-xs-2 py-3">
+                <div class="col py-1">
                   <p class="my-0">Tues</p>
                   <i class="bi bi-cloud-rain fs-4"></i>
-                  <p class="my-0">
-                    22&deg;C
-                  </p>
+                  <p class="my-0">22&deg;C</p>
                 </div>
-                    
-              </div> 
+                <div class="col py-1">
+                  <p class="my-0">Tues</p>
+                  <i class="bi bi-cloud-rain fs-4"></i>
+                  <p class="my-0">22&deg;C</p>
+                </div>
+                <div class="col py-1">
+                  <p class="my-0">Tues</p>
+                  <i class="bi bi-cloud-rain fs-4"></i>
+                  <p class="my-0">22&deg;C</p>
+                </div>
+                <div class="col py-1">
+                  <p class="my-0">Tues</p>
+                  <i class="bi bi-cloud-rain fs-4"></i>
+                  <p class="my-0">22&deg;C</p>
+                </div>
+                <div class="col py-3">
+                  <p class="my-0">Tues</p>
+                  <i class="bi bi-cloud-rain fs-4"></i>
+                  <p class="my-0">22&deg;C</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer-dark">
+      <footer class="fixed-bottom pt-3 footer">
         <div class="container">
           <div class="row text-center">
-            <div class="col-md-4 box">
-              <span class="copyright quick-links">Copyright &copy; Your Website <script>document.write(new Date().getFullYear())</script>
+            <div class="col-md-4">
+              <span class="copyright quick-links"
+                >Copyright &copy; Jennifer Mbonu
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
               </span>
             </div>
             <div class="col-md-4 box">
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                  <i class="bi bi-twitter"></i>
-                </a>
+                  <a href="https://twitter.com/mbonu_jennifer">
+                    <i class="bi bi-twitter"></i>
+                  </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
-                  <i class="bi bi-github"></i>
-                </a>
+                  <a href="https://github.com/MbonuJennifer">
+                    <i class="bi bi-github"></i>
+                  </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
-                  <i class="bi bi-linkedin"></i>
-                </a>
+                  <a href="https://www.linkedin.com/in/jennifermbonu/">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -134,7 +142,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
