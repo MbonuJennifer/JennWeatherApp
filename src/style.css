@@ -77,8 +77,17 @@ body {
   background-color: #212529 !important;
   color: white;
 }
-.box a {
-  color: #7280ff;
+.box a{
+    color: #7280ff;
+}
+.copyright a{
+    color: white;
+}
+.copyright a:hover{
+    color: #7280ff;
+    text-decoration: underline;
+}
+.box a, .copyright a {
   text-decoration: none;
   transition: all 100ms ease-in-out;
 }

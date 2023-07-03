@@ -27,11 +27,19 @@ function displaySearch(event) {
   let inputValue = input.value;
   let urlSearch = `${apiURL}current?query=${inputValue}&units=metric`;
 
+  let urlForecast = `${apiURL}forecast?query=${inputValue}&units=metric`;
+    function getForecast(response) {
+    console.log(response.data.daily);
+    
+    }
+
+    axios.get(`${urlForecast}&key=${apiKey}`).then(getForecast);
+    
   function showRealTimeData(response) {
     let image = response.data.condition.icon_url;
     document.querySelector("#iconElement").setAttribute("src", `${image}`);
     let temperature = Math.round(response.data.temperature.current);
-    console.log(response.data);
+    
     document.querySelector("#tempOutput").textContent = `${temperature}`;
     let description = response.data.condition.description;
     document.querySelector("#description").textContent = `${description}`;
@@ -45,6 +53,7 @@ function displaySearch(event) {
   }
   axios.get(`${urlSearch}&key=${apiKey}`).then(showRealTimeData);
 }
+
 let cOutput = 14;
 form.addEventListener("submit", displaySearch);
 let f = document.querySelector("#fahrenheit");
